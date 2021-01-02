@@ -24,7 +24,7 @@ winston.add(new winston.transports.MongoDB ({db: 'mongodb://localhost/INECSTAFF'
 
 const db = config.get('db')
 mongoose.connect('mongodb://localhost/INECSTAFF')
-.then(()=>console.log(`Connected To ${db}`))
+.then(()=>winston.info(`Connected To ${db}`))
 .catch(err=>console.error('Could not connect', err));
 
 
