@@ -2,7 +2,7 @@
 const compression = require('compression');
 const helmet = require('helmet');
 const winston = require('winston');
-// require('winston-mongodb');
+require('winston-mongodb');
 require('express-async-errors');
 const config = require('config');
 const error =  require('./middleware/error');
@@ -18,8 +18,8 @@ process.on('uncaughtException', (ex)=>{
  console.log('We have Problem in the Startup');
     winston.error(ex.message, ex);
 });
-// winston.add(new winston.transports.File ({filename: 'errors'}));
-// winston.add(new winston.transports.MongoDB ({db: 'mongodb://localhost/INECSTAFF'}));
+winston.add(new winston.transports.File ({filename: 'errors'}));
+winston.add(new winston.transports.MongoDB ({db: 'mongodb://localhost/INECSTAFF'}));
 
 
 const db = config.get('db')
