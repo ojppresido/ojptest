@@ -19,7 +19,7 @@ process.on('uncaughtException', (ex)=>{
     winston.error(ex.message, ex);
 });
 winston.add(new winston.transports.File ({filename: 'errors'}));
-winston.add(new winston.transports.MongoDB ({db: 'mongodb://localhost/INECSTAFF'}));
+winston.add(new winston.transports.MongoDB ({db: 'mongodb://port/INECSTAFF'}));
 
 
 const db = config.get('db')
@@ -40,7 +40,7 @@ app.use(error);
 
 
 
-const port = process.env.NODE_ENV ||14;
+const port = process.env.PORT ||14;
 const server =  app.listen(port, ()=>console.log(`Connected to ${port}`));
 
 module.exports = server;
