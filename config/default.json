@@ -2,6 +2,6 @@
 
 {
     "isityou": "",
-    "db": ""
+    "db": "mongodb://localhost/INECSTAFF"
 
 }
