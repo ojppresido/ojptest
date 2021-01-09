@@ -40,7 +40,7 @@ app.use(error);
 
 
 
-const port = process.env.PORT ||14;
+const port = process.env.NODE_ENV ||14;
 const server =  app.listen(port, ()=>console.log(`Connected to ${port}`));
 
 module.exports = server;
