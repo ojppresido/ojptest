@@ -5,7 +5,7 @@ const winston = require('winston');
 // require('winston-mongodb');
 // require('express-async-errors');
 const config = require('config');
-// const error =  require('./middleware/error');
+const error =  require('./middleware/error');
 const mongoose = require('mongoose');
 const staffs = require('./route/staffs');
 const authent = require('./route/authent');
@@ -14,10 +14,10 @@ const app = express();
 
 
 
-process.on('uncaughtException', (ex)=>{
-    console.log('We have Problem in the Startup');
-    winston.error(ex.message, ex);
-});
+// process.on('uncaughtException', (ex)=>{
+    // console.log('We have Problem in the Startup');
+    // winston.error(ex.message, ex);
+// });
 // winston.add(new winston.transports.File ({filename: 'errors'}));
 // winston.add(new winston.transports.MongoDB ({db: 'mongodb://localhost/INECSTAFF'}));
 
