@@ -5,5 +5,5 @@ module.exports = function(err, req, res, next) {
 
     winston.error(err.message, err);
     
-    res.status(500).send('Something Failled in the System');
+    res.status(500).send('I still cannot get something in this program');
 };
