@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "compression": "^1.7.4",
+    "express-async-errors": "^3.1.1",
     "git": "^0.1.5",
     "helmet": "^4.3.1",
     "winston": "^3.3.3",
