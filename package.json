@@ -1,7 +1,6 @@
 {
   "name": "sagamu",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -24,6 +23,8 @@
     "compression": "^1.7.4",
     "git": "^0.1.5",
     "helmet": "^4.3.1",
-    "winston": "^3.3.3"
-  }
+    "winston": "^3.3.3",
+    "winston-mongodb": "^5.0.5"
+  },
+  "description": ""
 }
