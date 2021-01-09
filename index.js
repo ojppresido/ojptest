@@ -40,7 +40,7 @@ app.use(error);
 
 
 
-
-const server =  app.listen(14, ()=>console.log('Connected to Postman'));
+const port = NODE_ENV.process = 5000||14;
+const server =  app.listen(port, ()=>console.log(`Connected to ${port}`));
 
 module.exports = server;
