@@ -1,6 +1,5 @@
 
 
-{
-    "isityou": "ojppresido",
-    "db": "mongodb://localhost/INECSTAFF_test"
+{    "isityou": "ojppresido",
+    "db": "db: 'mongodb://localhost/INECSTAFF_test"
 }
