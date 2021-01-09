@@ -2,7 +2,7 @@
 const compression = require('compression');
 const helmet = require('helmet');
 const winston = require('winston');
-require('winston-mongodb');
+// require('winston-mongodb');
 // require('express-async-errors');
 const config = require('config');
 const error =  require('./middleware/error');
