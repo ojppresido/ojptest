@@ -14,10 +14,10 @@ const app = express();
 
 
 
-// process.on('uncaughtException', (ex)=>{
-    // console.log('We have Problem in the Startup');
-    // winston.error(ex.message, ex);
-// });
+process.on('uncaughtException', (ex)=>{
+    console.log('We have Problem in the Startup');
+    winston.error(ex.message, ex);
+});
 // winston.add(new winston.transports.File ({filename: 'errors'}));
 // winston.add(new winston.transports.MongoDB ({db: 'mongodb://localhost/INECSTAFF'}));
 
