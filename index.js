@@ -19,7 +19,7 @@ process.on('uncaughtException', (ex)=>{
     winston.error(ex.message, ex);
 });
 winston.add(new winston.transports.File ({filename: 'errors'}));
-winston.add(new winston.transports.MongoDB ({db: 'mongodb://localhost:port/INECSTAFF'}));
+winston.add(new winston.transports.MongoDB ({db: 'mongodb://localhost/INECSTAFF'}));
 
 
 const db = config.get('db')
