@@ -2,6 +2,7 @@
 
 {
     "isityou": "ojppresido",
-    "db": "ojppresido_db"
+    "MONGOLAB_URL": "mongodb+srv://Dreams1987:Dreams1987@cluster0.6t61y.mongodb.net/INECSTAFF?retryWrites=true&w=majority"
+    
 
 }
