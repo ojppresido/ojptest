@@ -21,9 +21,9 @@ process.on('uncaughtException', (ex)=>{
 winston.add(new winston.transports.File ({filename: 'errors'}));
 winston.add(new winston.transports.MongoDB ({db: 'mongodb://localhost/INECSTAFF'}));
 
-const url = 'mongodb+srv://john:<password>@cluster0.fymuf.mongodb.net/test';
+const url = 'mongodb+srv://Dreams1987:Dreams1987@cluster0.6t61y.mongodb.net/INECSTAFF?retryWrites=true&w=majority';
 const db = config.get('db')
-mongoose.connect('mongodb://localhost/INECSTAFF')
+mongoose.connect(url)
 .then(()=>winston.info(`Connected To db`))
 .catch(err=>console.error('Could not connect', err));
 
