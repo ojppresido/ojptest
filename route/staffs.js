@@ -1,6 +1,7 @@
 const _= require('lodash');
 const handler = require('../middleware/tryCatch');
 const {Staff, validate} = require('../module/staff');
+const {List, listvalidate} = require('../middleware/List');
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
@@ -18,6 +19,26 @@ router.get('/', /*[Author, Admin],*/ async(req, res)=>{
     res.send(staff);
     
    });
+
+   router.get('/list', /*[Author, Admin],*/ async(req, res)=>{
+    const list = await List.find();
+    res.send(list);
+    
+   });
+
+   router.post('/list', /*[Author, Admin],*/ async(req, res)=>{
+    const {error} = listvalidate(req.body);
+    if(error) return res.status(401).send(error.message);
+
+    let list = await Staff.findOne({inecNo: req.body.inecNo});
+    if(list) return res.status(400).send('User Already Registered');
+
+    list = new List({inecNo: req.body.inecNo});
+
+    await list.save();
+        res.send('Sucessful Input');
+
+});
 
 
    router.get('/:id', ObjectId,  /*[Author, Admin],*/ async(req, res)=>{
@@ -42,8 +63,11 @@ router.post('/', async(req, res)=>{
     const {error} = validate(req.body);
     if(error) return res.status(401).send(error.message);
 
+    let check = await List.findOne({inecNo: req.body.inecNo});
+    if(!check) return res.status(404).send('You are not a staff of INECSAGAMU');
+
     let staff = await Staff.findOne({inecNo: req.body.inecNo});
-    // if(staff) return res.status(400).send('User Already Registered');
+    if(staff) return res.status(400).send('User Already Registered');
 
     staff = new Staff(_.pick(req.body, ['surname', 'firstname', 'dateOfAppointment',
         'inecNo', 'cadre', 'position', 'levelStep', 'phone', 'username', 'password', 'email']));
