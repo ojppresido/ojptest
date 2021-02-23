@@ -2,7 +2,7 @@
 
 {
     "isityou": "ojppresido",
-    "MONGOLAB_URL": "mongodb+srv://Dreams1987:Dreams1987@cluster0.6t61y.mongodb.net/INECSTAFF?retryWrites=true&w=majority"
+    "MONGOLAB_URL": "mongodb+srv://john:john@cluster0.fymuf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
     
 
 }
