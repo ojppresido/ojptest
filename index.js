@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const staffs = require('./route/staffs');
 const authent = require('./route/authent');
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
 const app = express();
 
 
@@ -28,7 +28,7 @@ mongoose.connect('mongodb://localhost/INECSTAFF')
 .catch(err=>console.error('Could not connect', err));
 
 
-// app.use(cors());
+app.use(cors());
 app.use(helmet());
 app.use(compression());
 app.use('/staff', staffs);
