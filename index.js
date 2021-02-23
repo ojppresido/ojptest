@@ -1,4 +1,3 @@
-const cors = require('cors');
 const compression = require('compression');
 const helmet = require('helmet');
 const winston = require('winston');
@@ -10,6 +9,7 @@ const mongoose = require('mongoose');
 const staffs = require('./route/staffs');
 const authent = require('./route/authent');
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 
