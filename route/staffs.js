@@ -30,7 +30,7 @@ router.get('/', /*[Author, Admin],*/ async(req, res)=>{
     const {error} = listvalidate(req.body);
     if(error) return res.status(401).send(error.message);
 
-    let list = await Staff.findOne({inecNo: req.body.inecNo});
+    let list = await List.findOne({inecNo: req.body.inecNo});
     if(list) return res.status(400).send('User Already Registered');
 
     list = new List({inecNo: req.body.inecNo});
