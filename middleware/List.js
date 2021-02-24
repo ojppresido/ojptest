@@ -14,14 +14,14 @@ const List = mongoose.model('SAGLIST', listSchema);
 
 
 
-function listvalidate(list) {
+function listMark(list) {
     const schema = Joi.object({
         
-        inecNo: Joi.string().required().max(25),
+        inecNo: Joi.string().required().max(25)
             
     });
     return schema.validate(list);
 };
 
 module.exports.List = List;
-module.exports.listvalidate = listvalidate;
+module.exports.listMark = listMark;

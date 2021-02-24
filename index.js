@@ -32,7 +32,6 @@ app.use(cors());
 app.use(helmet());
 app.use(compression());
 app.use('/staff', staffs);
-app.use('/list', staffs);
 app.use('/authent', authent);
 app.use(error);
 

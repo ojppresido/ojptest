@@ -1,7 +1,7 @@
 const _= require('lodash');
 const handler = require('../middleware/tryCatch');
 const {Staff, validate} = require('../module/staff');
-const {List, listvalidate} = require('../middleware/List');
+const {List, listMark} = require('../middleware/List');
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
@@ -10,8 +10,8 @@ const Admin = require('../middleware/admin');
 const mongoose  = require('mongoose');
 const ObjectId = require('../middleware/validateObjectId');
 
-
 router.use(express.json());
+
 
 
 router.get('/', /*[Author, Admin],*/ async(req, res)=>{
@@ -27,7 +27,7 @@ router.get('/', /*[Author, Admin],*/ async(req, res)=>{
    });
 
    router.post('/list', /*[Author, Admin],*/ async(req, res)=>{
-    const {error} = listvalidate(req.body);
+    const {error} = listMark(req.body);
     if(error) return res.status(401).send(error.message);
 
     let list = await List.findOne({inecNo: req.body.inecNo});
